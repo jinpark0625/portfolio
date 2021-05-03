@@ -1,0 +1,83 @@
+@media screen and (max-width: 768px) {
+  .menu_wrap_m {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #070707;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu_m {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+  .menu_m::after {
+    content: "";
+    width: 100vw;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 30%;
+  }
+  .text_m {
+    display: block;
+    height: 30px;
+    font-family: "Jeju-Myeongjo";
+    font-size: 26px;
+    margin: 0 0 20px 0;
+    transition: color 0.6s ease-in-out;
+    line-height: 30px;
+    color: #cecece;
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1rem;
+    color: #cecece;
+    width: 50px;
+    height: 30px;
+    text-align: right;
+  }
+  .logo {
+    width: 30px;
+    height: 30px;
+    background-color: #070707;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hide {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .text_m {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text_m {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .text_m {
+    font-size: 16px;
+  }
+}

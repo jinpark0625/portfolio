@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("font/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("font/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jeju-Myeongjo";
+  src: url("font/JejuMyeongjoOTF.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jeju-Gothic";
+  src: url("font/JejuGothicOTF.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+a:hover,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Jeju-Myeongjo", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* html {
+  scroll-snap-type: y mandatory;
+} */
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */

@@ -1,0 +1,61 @@
+.wrap {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  z-index: 999;
+  position: fixed;
+}
+.wrap_m {
+  display: none;
+  top: 20px;
+  left: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 999;
+  position: fixed;
+}
+/* .menu_wrap_m {
+  display: none;
+} */
+.text_wrap {
+  margin-bottom: 10px;
+}
+.text {
+  display: block;
+  height: 30px;
+  font-family: "Jeju-Myeongjo";
+  font-size: 1rem;
+  margin-left: 10px;
+  transition: color 0.6s ease-in-out;
+  margin: 0;
+  line-height: 30px;
+}
+.about {
+  color: #5c5c5c;
+}
+.about:hover {
+  color: #070707;
+  font-weight: bolder;
+}
+.project {
+  color: #c2c2c2;
+}
+.project:hover {
+  color: #fff;
+  font-weight: bolder;
+}
+.black {
+  color: #070707;
+}
+@media screen and (max-width: 768px) {
+  .wrap {
+    display: none;
+  }
+  .wrap_m {
+    display: block;
+  }
+  .menu_icon {
+    margin: 0;
+  }
+}

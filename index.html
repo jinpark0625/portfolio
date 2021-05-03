@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .outer-wrapper {
+        width: 100vh;
+        height: 100vw;
+        transform: rotate(-90deg) translateX(-100vh);
+        transform-origin: top left;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: absolute;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 400vw;
+        transform: rotate(90deg) translateY(-100vh);
+        transform-origin: top left;
+      }
+      .slide {
+        width: 100vw;
+        height: 100vh;
+      }
+      .one {
+        background: #efdefe;
+      }
+      .two {
+        background: #a3f3d3;
+      }
+      .three {
+        background: #0bbaa0;
+      }
+      .four {
+        background: #00dfdf;
+      }
+
+      /* body {
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        width: 100vh;
+        height: 100vw;
+        transform: rotate(-90deg) translateX(-100vh);
+        transform-origin: top left;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: absolute;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      section {
+        display: flex;
+        flex-direction: row;
+        width: 300vw;
+      }
+      section div {
+        width: 100vw;
+        height: 100vh;
+      }
+      .one {
+        background-color: blanchedalmond;
+      }
+      .two {
+        background-color: brown;
+      }
+      .three {
+        background-color: cadetblue;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <main>
+      <section>
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </section>
+    </main> -->
+
+    <div class="outer-wrapper">
+      <div class="wrapper">
+        <div class="slide one"></div>
+        <div class="slide two"></div>
+        <div class="slide three"></div>
+        <div class="slide four"></div>
+      </div>
+    </div>
+    <script>
+      const one = document.querySelector(".one");
+      const two = document.querySelector(".two");
+      const three = document.querySelector(".three");
+      const section = document.querySelector("section");
+
+      const twoX = two.getBoundingClientRect();
+      const threeX = three.getBoundingClientRect();
+
+      const result = threeX.x - twoX.x;
+      const real = result / 2;
+
+      //   window.addEventListener("scroll", () => {
+      //     console.log(window.scrollY);
+      //   });
+
+      window.addEventListener("scroll", () => {
+        const scroll = document.documentElement.scrollTop;
+        per = Math.ceil(
+          (scroll / (document.body.scrollHeight - window.outerHeight)) * 100
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        -webkit-touch-callout: none;
+        overflow: hidden;
+      }
+      main {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      section {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: grab;
+      }
+      .hey {
+        width: 60vw;
+        height: 300px;
+        background-color: chocolate;
+      }
+      .you {
+        width: 60vw;
+        height: 100vh;
+        background-color: crimson;
+      }
+      .yeah {
+        width: 60vw;
+        height: 80vh;
+        background-color: darkgreen;
+      }
+      .wrap {
+        position: absolute;
+        width: 300vw;
+        height: 300vh;
+        touch-action: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="wrap">
+          <div class="hey"></div>
+          <div class="you"></div>
+          <div class="yeah"></div>
+          <h1></h1>
+          <div class="cursor_item"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // let cursor_item;
+      // let x = 0;
+      // let y = 0;
+      // let mx = 0;
+      // let my = 0;
+      // let speed = 0.04;
+      const ele = document.getElementById("container");
+      ele.scrollTop = 100;
+      ele.scrollLeft = 150;
+
+      let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+      const mouseDownHandler = function (e) {
+        pos = {
+          // The current scroll
+          left: ele.scrollLeft,
+          top: ele.scrollTop,
+          // Get the current mouse position
+          x: e.clientX,
+          y: e.clientY,
+        };
+        ele.style.cursor = "grabbing";
+        ele.style.userSelect = "none";
+
+        document.addEventListener("mousemove", mouseMoveHandler);
+        document.addEventListener("mouseup", mouseUpHandler);
+      };
+
+      const mouseMoveHandler = function (e) {
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
+
+        // Scroll the element
+        ele.scrollTop = pos.top - dy;
+        ele.scrollLeft = pos.left - dx;
+      };
+
+      const mouseUpHandler = function () {
+        ele.style.cursor = "grab";
+        ele.style.removeProperty("user-select");
+      };
+      // window.onload = function () {
+      //   let h1 = document.getElementsByTagName("h1")[0];
+      //   cursor_item = document.getElementsByClassName("cursor_item")[0];
+      //   window.addEventListener("mousemove", mouseFunc, false);
+
+      //     function mouseFunc(e) {
+      //       x = e.clientX;
+      //       y = e.clientY;
+
+      //       h1.innerHTML = "X:" + x + "Y: " + y;
+      //     }
+
+      //     loop();
+      //   };
+
+      //   function loop() {
+      //     // console.log(x, y);
+      //     mx += (x - mx) * speed;
+      //     my += (y - my) * speed;
+
+      //     cursor_item.style.transform = "translate(" + mx + "px, " + my + "px)";
+
+      //     window.requestAnimationFrame(loop);
+      //   }
+
+      //   window.addEventListener("mousedown", (event) => {
+      //     go(event);
+      //   });
+
+      //   function go(event) {
+      //     console.log(event);
+      //     x = event.clientX;
+      //     y = event.clientY;
+      //     // const wo = document.querySelector(".wrap");
+      //     // wo.style.transform = `translate(0,10vh)`;
+      //     window.scrollY(1200);
+      //   }
+    </script>
+  </body>
+</html>
