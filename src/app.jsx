@@ -10,7 +10,6 @@ import Jinflix from "./components/jinflix/jinflix";
 import Todo from "./components/todo/todo";
 import Skt from "./components/skt/skt";
 import Sticky from "./components/sticky/sticky";
-// import ScrollToTop from "./components/scrollTop/scrollTop";
 import ScrollToTop from "react-router-scroll-top";
 
 function App({ Cursor, NavBtn, contactRepository }) {
