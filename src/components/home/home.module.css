@@ -1,3 +1,5 @@
+@value makerBlackD from '../../common/color.css';
+
 .main {
   overflow: hidden;
   cursor: none;
@@ -24,7 +26,7 @@
 .text {
   font-size: 1.4rem;
   font-family: "Jeju-Myeongjo";
-  color: #d4d4d4;
+  color: makerBlackD;
   position: absolute;
   left: 50%;
   top: 23%;
@@ -41,7 +43,7 @@
   height: 90px;
   font-size: 1rem;
   font-family: "Jeju-Myeongjo";
-  color: #d4d4d4;
+  color: makerBlackD;
   position: absolute;
   left: 50%;
   top: 70%;
@@ -59,15 +61,19 @@
   height: 100%;
   border-radius: 100%;
   border: 1px solid rgba(212, 212, 212, 0.4);
-  box-shadow: 0px 0px 4px 0px #d4d4d4;
+  box-shadow: 0px 0px 4px 0px makerBlackD;
   transition: transform 0.6s ease-in-out;
   transform-origin: 30% 50%;
 }
 .show {
   opacity: 1;
+  user-select: all;
+  cursor: pointer;
 }
 .hide {
   opacity: 0;
+  user-select: none;
+  cursor: none;
 }
 
 @keyframes showText {
@@ -76,5 +82,12 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text,
+  .next {
+    font-size: 16px;
   }
 }

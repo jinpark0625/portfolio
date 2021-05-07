@@ -15,9 +15,7 @@
   z-index: 999;
   position: fixed;
 }
-/* .menu_wrap_m {
-  display: none;
-} */
+
 .text_wrap {
   margin-bottom: 10px;
 }
@@ -30,6 +28,13 @@
   transition: color 0.6s ease-in-out;
   margin: 0;
   line-height: 30px;
+  color: #c3c3c3;
+  transition: 0.6s ease-in-out;
+  transition-property: color, transform;
+}
+.text:hover {
+  color: #fff;
+  transform: scale(1.1);
 }
 .about {
   color: #5c5c5c;
@@ -57,5 +62,7 @@
   }
   .menu_icon {
     margin: 0;
+    color: #c3c3c3;
+    cursor: pointer;
   }
 }

@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./contact.module.css";
+import Particles from "react-particles-js";
+import Svg from "../svg/svg";
 
 const Contact = ({ Cursor, NavBtn, contactRepository }) => {
   const nameRef = useRef();
@@ -22,8 +24,58 @@ const Contact = ({ Cursor, NavBtn, contactRepository }) => {
 
   return (
     <section className={styles.wrap}>
-      {/* <Cursor></Cursor> */}
+      <Cursor></Cursor>
       <NavBtn></NavBtn>
+      <Particles
+        className={styles.particle}
+        params={{
+          particles: {
+            number: {
+              value: 60,
+              density: {
+                enable: true,
+                value_area: 1500,
+              },
+            },
+            color: {
+              value: "#C3C3C3",
+            },
+
+            line_linked: {
+              enable: true,
+              opacity: 0.02,
+            },
+            move: {
+              direction: "right",
+              speed: 0.5,
+            },
+            size: {
+              value: 1,
+            },
+            opacity: {
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.5,
+              },
+            },
+          },
+          interactivity: {
+            events: {
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+            },
+            modes: {
+              push: {
+                particles_nb: 1,
+              },
+            },
+          },
+          retina_detect: true,
+        }}
+      />
 
       <div className={styles.element_wrap}>
         <div className={styles.contact_wrap}>
@@ -74,6 +126,9 @@ const Contact = ({ Cursor, NavBtn, contactRepository }) => {
           )}
         </div>
       </div>
+      <span className={styles.logo}>
+        <Svg />
+      </span>
     </section>
   );
 };

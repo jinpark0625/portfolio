@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./jinflix.module.css";
-import firstVideo from "./jinflix1.mov";
-import secondVideo from "./jinflix2.mov";
-import thirdVideo from "./jinflix3.mov";
-import fourthVideo from "./jinflix4.mov";
+import firstVideo from "./jinflix1.webm";
+import secondVideo from "./jinflix2.webm";
+import thirdVideo from "./jinflix3.webm";
+import fourthVideo from "./jinflix4.webm";
 
 const Jinflix = ({ Cursor, NavBtn }) => {
   return (
@@ -15,7 +15,11 @@ const Jinflix = ({ Cursor, NavBtn }) => {
       <section>
         <header className={styles.header}>
           <div className={styles.bg}>
-            <img src="/image/jinflix/bg.jpg" alt="" className={styles.bg_img} />
+            <img
+              src="./image/jinflix/bg.jpg"
+              alt=""
+              className={styles.bg_img}
+            />
           </div>
           <div className={styles.project_info_wrap}>
             <div className={styles.project_info_div}>
@@ -164,7 +168,7 @@ const Jinflix = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="/image/skt/skt.jpeg"
+              src="./image/skt/skt.jpeg"
               alt="logo"
               className={styles.footer_next_img}
             />

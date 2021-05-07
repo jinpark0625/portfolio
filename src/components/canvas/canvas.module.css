@@ -1,6 +1,5 @@
 .canvas {
   position: "absolute";
   z-index: -100;
-  /* background-color: #080808; */
-  background: radial-gradient(circle, rgb(24 24 24) 0%, rgb(12 12 12) 100%);
+  background: #1b1d20;
 }

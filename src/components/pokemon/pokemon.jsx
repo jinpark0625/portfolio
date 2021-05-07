@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./pokemon.module.css";
-import firstVideo from "./pokemon1.mov";
-import secondVideo from "./pokemon2.mov";
-import thirdVideo from "./pokemon3.mov";
+import firstVideo from "./pokemon1.webm";
+import secondVideo from "./pokemon2.webm";
+import thirdVideo from "./pokemon3.webm";
 
 const Pokemon = ({ Cursor, NavBtn }) => {
   return (
@@ -15,7 +15,7 @@ const Pokemon = ({ Cursor, NavBtn }) => {
         <header className={styles.header}>
           <div className={styles.bg}>
             <img
-              src="/image/pokemon/bg4.jpg"
+              src="./image/pokemon/bg4.jpg"
               alt=""
               className={styles.bg_img}
             />
@@ -150,7 +150,7 @@ const Pokemon = ({ Cursor, NavBtn }) => {
             <div className={styles.project_detail_mobile}>
               <div className={styles.project_detail_mobile_mv}>
                 <img
-                  src="/image/pokemon/poke_mobile.png"
+                  src="./image/pokemon/poke_mobile.png"
                   alt=""
                   className={styles.project_img}
                 />
@@ -177,7 +177,7 @@ const Pokemon = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="/image/jintube/logo.png"
+              src="./image/jintube/logo.png"
               alt="logo"
               className={styles.footer_next_img}
             />

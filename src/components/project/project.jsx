@@ -1,11 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./project.module.css";
+import Particles from "react-particles-js";
 
 const Project = ({ Cursor, NavBtn }) => {
-  const [listShow, setListShow] = useState(0);
-
   const progressRef = useRef();
+  const wrapRef = useRef();
+  const pageRef = useRef();
+  const lastRef = useRef();
+  const ulRef = useRef();
+
+  const [listShow, setListShow] = useState(0);
 
   const mouseOn = (e) => {
     if (e.target.id === "pokemon") {
@@ -47,12 +52,86 @@ const Project = ({ Cursor, NavBtn }) => {
     }
   };
 
+  const addEventListeners = () => {
+    ulRef.current.addEventListener("scroll", onScroll);
+  };
+
+  const onScroll = () => {
+    let lastX = lastRef.current.getBoundingClientRect().x;
+    console.log(lastX);
+    if (lastX <= 0) {
+      pageRef.current.scrollIntoView({
+        inline: "end",
+      });
+    }
+  };
+
+  const removeEventListeners = () => {
+    window.removeEventListener("scroll", onScroll);
+  };
+
+  useEffect(() => {
+    addEventListeners();
+    return () => {
+      removeEventListeners();
+    };
+  }, []);
+
   return (
     <>
       <article className={styles.wrap}>
-        <div className={styles.noise}></div>
         <NavBtn />
         <Cursor />
+        <Particles
+          className={styles.particle}
+          params={{
+            particles: {
+              number: {
+                value: 60,
+                density: {
+                  enable: true,
+                  value_area: 1500,
+                },
+              },
+              color: {
+                value: "#C3C3C3",
+              },
+
+              line_linked: {
+                enable: true,
+                opacity: 0.02,
+              },
+              move: {
+                direction: "right",
+                speed: 0.5,
+              },
+              size: {
+                value: 1,
+              },
+              opacity: {
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.5,
+                },
+              },
+            },
+            interactivity: {
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                push: {
+                  particles_nb: 1,
+                },
+              },
+            },
+            retina_detect: true,
+          }}
+        />
         <div className={styles.project_wrap}>
           <section className={styles.fixedItem}>
             <svg className={styles.circle_wrap}>
@@ -64,7 +143,7 @@ const Project = ({ Cursor, NavBtn }) => {
                   cy="375.04764"
                   cx="375.00001"
                   fill="none"
-                  stroke="#d4d4d4"
+                  stroke="#c3c3c3"
                   className={styles.track}
                 />
               </g>
@@ -76,7 +155,7 @@ const Project = ({ Cursor, NavBtn }) => {
                   cy="375.04764"
                   cx="375.00001"
                   fill="none"
-                  stroke="#d4d4d4"
+                  stroke="#c3c3c3"
                   className={styles.progress}
                   ref={progressRef}
                 />
@@ -88,8 +167,8 @@ const Project = ({ Cursor, NavBtn }) => {
                   id="pokemon"
                   cy="25.17557"
                   cx="376.42858"
-                  stroke="#d4d4d4"
-                  fill="#1b1b1b"
+                  stroke="#c3c3c3"
+                  fill="#1b1d20"
                   className={styles.pokemon}
                   onMouseOver={mouseOn}
                   onMouseLeave={mouseLeave}
@@ -102,8 +181,8 @@ const Project = ({ Cursor, NavBtn }) => {
                   id="jinflix"
                   cy="724.82448"
                   cx="376.42858"
-                  stroke="#d4d4d4"
-                  fill="#1b1b1b"
+                  stroke="#c3c3c3"
+                  fill="#1b1d20"
                   className={styles.jinflix}
                   onMouseOver={mouseOn}
                   onMouseLeave={mouseLeave}
@@ -116,8 +195,8 @@ const Project = ({ Cursor, NavBtn }) => {
                   id="notTodo"
                   cy="552.82553"
                   cx="677.42673"
-                  stroke="#d4d4d4"
-                  fill="#1b1b1b"
+                  stroke="#c3c3c3"
+                  fill="#1b1d20"
                   className={styles.notTodo}
                   onMouseOver={mouseOn}
                   onMouseLeave={mouseLeave}
@@ -130,8 +209,8 @@ const Project = ({ Cursor, NavBtn }) => {
                   id="skt"
                   cy="552.82553"
                   cx="74.99857"
-                  stroke="#d4d4d4"
-                  fill="#1b1b1b"
+                  stroke="#c3c3c3"
+                  fill="#1b1d20"
                   className={styles.skt}
                   onMouseOver={mouseOn}
                   onMouseLeave={mouseLeave}
@@ -144,8 +223,8 @@ const Project = ({ Cursor, NavBtn }) => {
                   id="jintube"
                   cy="198.46809"
                   cx="677.42673"
-                  stroke="#d4d4d4"
-                  fill="#1b1b1b"
+                  stroke="#c3c3c3"
+                  fill="#1b1d20"
                   className={styles.jintube}
                   onMouseOver={mouseOn}
                   onMouseLeave={mouseLeave}
@@ -158,8 +237,8 @@ const Project = ({ Cursor, NavBtn }) => {
                   id="sticky"
                   cy="198.46809"
                   cx="74.99857"
-                  stroke="#d4d4d4"
-                  fill="#1b1b1b"
+                  stroke="#c3c3c3"
+                  fill="#1b1d20"
                   className={styles.sticky}
                   onMouseOver={mouseOn}
                   onMouseLeave={mouseLeave}
@@ -269,45 +348,109 @@ const Project = ({ Cursor, NavBtn }) => {
           </section>
         </div>
       </article>
-      <section className={styles.wrap_m}>
+      <section ref={wrapRef} className={styles.wrap_m}>
         <NavBtn />
-        <ul className={styles.list_wrap_m}>
-          <li>
+        <ul className={styles.ul} ref={ulRef}>
+          <li className={styles.li} ref={pageRef}>
             <NavLink to="/pokemon" className={styles.list_m}>
               Pokemon
             </NavLink>
           </li>
-          <li>
+          <li className={styles.li}>
             <NavLink to="/jintube" className={styles.list_m}>
               Jintube
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/todo" className={`${styles.list_m} ${styles.margin}`}>
-              Not Todo list
+          <li className={styles.li}>
+            <NavLink to="/todo" className={styles.list_m}>
+              Not
+              <br />
+              To-do list
             </NavLink>
           </li>
-        </ul>
-        <ul className={styles.list_wrap_m}>
-          <li>
+          <li className={styles.li}>
             <NavLink to="/jinflix" className={styles.list_m}>
               Jinflix
             </NavLink>
           </li>
-          <li>
+          <li className={styles.li}>
             <NavLink to="/skt" className={styles.list_m}>
               Skt AI
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="sticky"
-              className={`${styles.list_m} ${styles.margin}`}
-            >
+          <li className={styles.li}>
+            <NavLink to="sticky" className={styles.list_m}>
               Sticky Monster Lab
             </NavLink>
           </li>
+          <li className={styles.li} ref={lastRef}>
+            <NavLink to="/pokemon" className={styles.list_m}>
+              Pokemon
+            </NavLink>
+          </li>
+          <li className={styles.li}>
+            <NavLink to="/jintube" className={styles.list_m}>
+              Jintube
+            </NavLink>
+          </li>
+          <li className={styles.li}>
+            <NavLink to="/todo" className={styles.list_m}>
+              Not
+              <br />
+              To-do list
+            </NavLink>
+          </li>
         </ul>
+        <Particles
+          className={styles.particle}
+          params={{
+            particles: {
+              number: {
+                value: 60,
+                density: {
+                  enable: true,
+                  value_area: 1500,
+                },
+              },
+              color: {
+                value: "#C3C3C3",
+              },
+
+              line_linked: {
+                enable: true,
+                opacity: 0.02,
+              },
+              move: {
+                direction: "right",
+                speed: 0.5,
+              },
+              size: {
+                value: 1,
+              },
+              opacity: {
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.5,
+                },
+              },
+            },
+            interactivity: {
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                push: {
+                  particles_nb: 1,
+                },
+              },
+            },
+            retina_detect: true,
+          }}
+        />
       </section>
     </>
   );

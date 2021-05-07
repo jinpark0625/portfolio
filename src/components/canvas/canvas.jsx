@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-// import useViewportSize from "../useViewportSize/useViewportSize";
 import DrawDot from "./drawDot";
 import styles from "./canvas.module.css";
 

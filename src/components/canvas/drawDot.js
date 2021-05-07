@@ -2,11 +2,13 @@ const DrawDot = (canvasRef, width, height) => {
   // globals
   const DOT_COUNT = 8;
   const MIN_DOT_SIZE = 5;
-  const DOT_SIZE_RANGE = 25;
+  let DOT_SIZE_RANGE = 25;
   const MAX_VELOCITY = 2;
   const MOUSE_DISTANCE = 50;
   const BORDER_GROW_SPEED = 1;
+
   let linkDot = null;
+  let re = false;
 
   //   set up canvas
   const canvas = canvasRef.current;
@@ -19,6 +21,12 @@ const DrawDot = (canvasRef, width, height) => {
     canvas.height = window.innerHeight;
     init();
   });
+
+  if (width <= 768) {
+    DOT_SIZE_RANGE = 18;
+  } else if (width <= 480) {
+    DOT_SIZE_RANGE = 13;
+  }
 
   //   set up start
   let dotArray = [];
@@ -50,28 +58,21 @@ const DrawDot = (canvasRef, width, height) => {
     dotArray = [];
     linksArray = [];
 
-    for (let i = 0; i < DOT_COUNT; i++) {
-      // set up dot radius
-      let radius = Math.random() * DOT_SIZE_RANGE + MIN_DOT_SIZE;
-      let x = Math.random() * (window.innerWidth - radius * 2) + radius;
-      let y = Math.random() * (window.innerHeight - radius * 2) + radius;
-      let dx = (Math.random() - 0.5) * MAX_VELOCITY;
-      let dy = (Math.random() - 0.5) * MAX_VELOCITY;
+    if (!re) {
+      for (let i = 0; i < DOT_COUNT; i++) {
+        // set up dot radius
+        let radius = Math.random() * DOT_SIZE_RANGE + MIN_DOT_SIZE;
+        let x = Math.random() * (window.innerWidth - radius * 2) + radius;
+        let y = Math.random() * (window.innerHeight - radius * 2) + radius;
+        let dx = (Math.random() - 0.5) * MAX_VELOCITY;
+        let dy = (Math.random() - 0.5) * MAX_VELOCITY;
 
-      let border = new Border(x, y, radius);
-      dotArray.push(new Dot(radius, x, y, dx, dy, border));
+        let border = new Border(x, y, radius);
+        dotArray.push(new Dot(radius, x, y, dx, dy, border));
+      }
+      animate();
     }
-    animate();
   }
-  // function drawBlock() {
-  //   let x = (window.innerWidth - 150) / 2;
-  //   let aa = document.body.scrollTop + window.innerHeight / 1.33;
-  //   let y = aa - 150 / 2;
-
-  //   ctx.fillStyle = "#080808";
-  //   ctx.shadowBlur = 0;
-  //   ctx.fillRect(x, y, 150, 150);
-  // }
 
   // Border class
   class Border {
@@ -91,7 +92,7 @@ const DrawDot = (canvasRef, width, height) => {
       ctx.shadowBlur = 10;
       // 0pi ~ 2pi (startAngle)
       ctx.arc(this.x, this.y, this.radius, Math.PI * 2, false);
-      ctx.strokeStyle = "#D4D4D4";
+      ctx.strokeStyle = "#C3C3C3";
       ctx.stroke();
     };
 
@@ -120,7 +121,7 @@ const DrawDot = (canvasRef, width, height) => {
       this.radius = radius;
       this.minRadius = radius;
       this.border = border;
-      this.color = "#D4D4D4";
+      this.color = "#C3C3C3";
 
       this.border.draw();
     }
@@ -193,7 +194,7 @@ const DrawDot = (canvasRef, width, height) => {
     ctx.shadowBlur = 0;
     ctx.moveTo(linkDot.x, linkDot.y);
     ctx.lineTo(mouse.x, mouse.y);
-    ctx.strokeStyle = "#D4D4D4";
+    ctx.strokeStyle = "#C3C3C3";
     ctx.stroke();
   }
 
@@ -215,25 +216,10 @@ const DrawDot = (canvasRef, width, height) => {
       ctx.shadowBlur = 10;
       ctx.moveTo(this.start.x, this.start.y);
       ctx.lineTo(this.end.x, this.end.y);
-      ctx.strokeStyle = "#D4D4D4";
+      ctx.strokeStyle = "#C3C3C3";
       ctx.stroke();
     }
   }
-
-  // let num = 0;
-  // function countEnd(end) {
-  //   if (end) {
-  //     num++;
-  //     if (num >= 3) {
-  //       showtext();
-  //     }
-  //   }
-  // }
-
-  // function showText() {
-  //   const next = document.querySelector(".next");
-  //   next.classList.add("show");
-  // }
 
   function animate() {
     requestAnimationFrame(animate);
@@ -250,7 +236,6 @@ const DrawDot = (canvasRef, width, height) => {
     if (linkDot) {
       renderActiveLink();
     }
-    // drawBlock();
   }
   init();
 };

@@ -27,8 +27,8 @@ const Home = ({ Cursor }) => {
       <div className={styles.noise} onMouseDown={onMouseDown}></div>
       <Canvas />
       <h4 className={styles.text}>점들을 이어주세요.</h4>
-      <NavLink to="/menu">
-        <span className={`${styles.next} ${btn ? styles.show : styles.hide}`}>
+      <NavLink to="/menu" className={`${btn ? styles.show : styles.hide}`}>
+        <span className={`${styles.next}`}>
           <h4>다음으로</h4>
           <div className={styles.border}></div>
         </span>

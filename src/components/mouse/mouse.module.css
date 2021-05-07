@@ -34,3 +34,9 @@
 .hide {
   opacity: 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+}

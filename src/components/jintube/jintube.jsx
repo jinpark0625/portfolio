@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./jintube.module.css";
-import firstVideo from "./jintube1.mov";
-import secondVideo from "./jintube2.mov";
-import thirdVideo from "./jintube3.mov";
-import fourthVideo from "./jintube4.mov";
+import firstVideo from "./jintube1.webm";
+import secondVideo from "./jintube2.webm";
+import thirdVideo from "./jintube3.webm";
+import fourthVideo from "./jintube4.webm";
 
 const Jintube = ({ Cursor, NavBtn }) => {
   return (
@@ -15,7 +15,11 @@ const Jintube = ({ Cursor, NavBtn }) => {
       <section>
         <header className={styles.header}>
           <div className={styles.bg}>
-            <img src="/image/jintube/bg.jpg" alt="" className={styles.bg_img} />
+            <img
+              src="./image/jintube/bg.jpg"
+              alt=""
+              className={styles.bg_img}
+            />
           </div>
           <div className={styles.project_info_wrap}>
             <div className={styles.project_info_div}>
@@ -165,7 +169,7 @@ const Jintube = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="/image/logo.svg"
+              src="./image/logo.svg"
               alt="logo"
               className={styles.footer_next_img}
             />

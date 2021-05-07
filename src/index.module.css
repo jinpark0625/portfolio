@@ -34,6 +34,8 @@ body {
   font-family: "Jeju-Myeongjo", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1b1d20;
+  /* overflow: hidden; */
 }
 /* html {
   scroll-snap-type: y mandatory;

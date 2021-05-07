@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./sticky.module.css";
-import firstVideo from "./sticky1.mov";
-import secondVideo from "./sticky2.mov";
-import thirdVideo from "./sticky3.mov";
-import fourthVideo from "./sticky4.mov";
+import firstVideo from "./sticky1.webm";
+import secondVideo from "./sticky2.webm";
+import thirdVideo from "./sticky3.webm";
+import fourthVideo from "./sticky4.webm";
 
 const Sticky = ({ Cursor, NavBtn }) => {
   return (
@@ -15,7 +15,11 @@ const Sticky = ({ Cursor, NavBtn }) => {
       <section>
         <header className={styles.header}>
           <div className={styles.bg}>
-            <img src="/image/sticky/bg.jpeg" alt="" className={styles.bg_img} />
+            <img
+              src="./image/sticky/bg.jpeg"
+              alt=""
+              className={styles.bg_img}
+            />
           </div>
           <div className={styles.project_info_wrap}>
             <div className={styles.project_info_div}>
@@ -166,7 +170,7 @@ const Sticky = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="/image/pokemon/bg.jpg"
+              src="./image/pokemon/bg.jpg"
               alt="logo"
               className={styles.footer_next_img}
             />

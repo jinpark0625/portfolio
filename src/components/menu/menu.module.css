@@ -3,14 +3,17 @@
 .wrap {
   background: linear-gradient(180deg, rgb(24 24 24) 0%, rgb(12 12 12) 100%);
   cursor: none;
-  /* scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory; */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-/* .manifesto,
-.menu {
-  scroll-snap-align: start;
-} */
+.particle {
+  background-color: #1b1d20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .noise {
   display: flex;
   z-index: 2;
@@ -44,6 +47,51 @@
   transition: all 0.6s ease;
   transition-property: opacity, background-color, transform, mix-blend-mode;
 }
+.manifesto {
+  height: 460px;
+  width: 360px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease-in-out;
+}
+.title {
+  z-index: 10;
+  color: #fff;
+  font-family: "Jeju-Myeongjo";
+  height: 360px;
+  margin: 0 160px 0 0;
+  font-size: 1.163rem;
+  line-height: 1.5;
+}
+.menu_blur {
+  filter: blur(1px);
+}
+.project_dot:hover .c_project,
+.project:hover ~ svg .c_project {
+  transform: scale(1.6);
+}
+.c_project {
+  transition: transform 0.6s ease-in-out;
+  transform-origin: 39.5% 37.5%;
+}
+.contact_dot:hover .c_contact,
+.contact:hover ~ svg .c_contact {
+  transform: scale(1.8);
+}
+.c_contact {
+  transition: transform 0.6s ease-in-out;
+  transform-origin: 93.5% 4%;
+}
+.about_dot:hover .c_about,
+.about:hover ~ svg .c_about {
+  transform: scale(1.7);
+}
+.c_about {
+  transition: transform 0.6s ease-in-out;
+  transform-origin: 19% 93.8%;
+}
 .onClick {
   transform: translate(-50%, -50%) scale(0.9);
   background-color: #d4d4d4;
@@ -58,193 +106,28 @@
 .mouse {
   background-color: unset;
 }
-.manifesto {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.6s ease-in-out;
-}
-.title {
+.about {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  color: #fff;
-  font-family: "Jeju-Myeongjo";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1.063rem;
-  line-height: 1.5;
-  width: 320px;
+  color: #c3c3c3;
+  left: -4%;
+  bottom: 3%;
+  font-size: 1.5rem;
 }
-.quote {
-  font-family: "Jeju-Myeongjo";
-  display: block;
-  font-size: 1.4rem;
-}
-.mark {
-  width: 40px;
-  height: 40px;
+.project {
   position: absolute;
-  bottom: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: moveMark 1.2s ease-in-out forwards infinite;
+  color: #c3c3c3;
+  left: 49.5%;
+  bottom: 49%;
+  font-size: 1.5rem;
 }
-.markL {
-  display: block;
-  content: "";
-  width: 12px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 2px;
-  transform: rotate(45deg) translateX(3px);
-}
-.markR {
-  display: block;
-  content: "";
-  width: 12px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 2px;
-  transform: rotate(-45deg) translateX(-3px);
+.contact {
+  position: absolute;
+  color: #c3c3c3;
+  right: -24%;
+  top: 4%;
+  font-size: 1.5rem;
 }
 
-@keyframes moveMark {
-  from {
-    transform: translateY(-5px);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 0;
-  }
-}
-
-.menu {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.9s ease-in-out;
-}
-.intro {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  color: #fff;
-  display: flex;
-  font-family: "Jeju-Myeongjo";
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1.063rem;
-  line-height: 1.5;
-}
-.menuDot_wrap {
-  font-family: "Jeju-Myeongjo";
-  position: absolute;
-  width: 700px;
-  height: 100%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  display: flex;
-  justify-content: space-between;
-}
-.menuDotOne_wrap {
-  top: 49%;
-  height: fit-content;
-  position: relative;
-}
-.menuDotTwo_wrap {
-  top: 29%;
-  left: -25px;
-  height: fit-content;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.menuDotThree_wrap {
-  top: 48%;
-  height: fit-content;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.menuDotOne {
-  width: 135.912px;
-  height: 135.912px;
-  border-radius: 100%;
-  background-color: #d4d4d4;
-  transition: transform 0.6s ease-in-out;
-  filter: blur(0.5px);
-  color: #080808;
-  font-size: 1.6em;
-  text-align: center;
-  line-height: 135.912px;
-  box-shadow: 0 0 14px 2px #d4d4d4;
-}
-
-.menuDotTwo {
-  width: 219.905616px;
-  height: 219.905616px;
-  border-radius: 100%;
-  background-color: #d4d4d4;
-  transition: transform 0.6s ease-in-out;
-  filter: blur(0.5px);
-  color: #070707;
-  font-size: 3em;
-  text-align: center;
-  line-height: 219.905616px;
-  box-shadow: 0 0 14px 2px #d4d4d4;
-}
-.menuDotThree {
-  width: 97px;
-  height: 97px;
-  border-radius: 100%;
-  background-color: #d4d4d4;
-  transition: transform 0.6s ease-in-out;
-  filter: blur(0.5px);
-  color: #070707;
-  font-size: 1.6em;
-  text-align: center;
-  line-height: 97px;
-  box-shadow: 0 0 14px 2px #d4d4d4;
-}
-.menuBorder {
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  position: absolute;
-  top: 0%;
-  left: 0;
-  transition: transform 0.6s ease-in-out;
-  user-select: none;
-  pointer-events: none;
-}
-.one {
-  border: 1px solid #d4d4d4;
-}
-.two {
-  border: 1px solid #d4d4d4;
-}
-.three {
-  border: 1px solid #d4d4d4;
-}
-.menuText {
-  color: makerLight;
-  position: absolute;
-  bottom: -60px;
-}
 .show {
   opacity: 1;
 }

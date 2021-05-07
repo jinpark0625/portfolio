@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./todo.module.css";
-import firstVideo from "./todo1.mov";
-import secondVideo from "./todo2.mov";
-import thirdVideo from "./todo3.mov";
+import firstVideo from "./todo1.webm";
+import secondVideo from "./todo2.webm";
+import thirdVideo from "./todo3.webm";
 
 const Todo = ({ Cursor, NavBtn }) => {
   return (
@@ -14,7 +14,7 @@ const Todo = ({ Cursor, NavBtn }) => {
       <section>
         <header className={styles.header}>
           <div className={styles.bg}>
-            <img src="/image/todo/todo.png" alt="" className={styles.bg_img} />
+            <img src="./image/todo/todo.png" alt="" className={styles.bg_img} />
           </div>
           <div className={styles.project_info_wrap}>
             <div className={styles.project_info_div}>
@@ -141,7 +141,7 @@ const Todo = ({ Cursor, NavBtn }) => {
             <div className={styles.project_detail_mobile}>
               <div className={styles.project_detail_mobile_mv}>
                 <img
-                  src="/image/todo/todo_m.png"
+                  src="./image/todo/todo_m.png"
                   alt=""
                   className={styles.project_img}
                 />
@@ -167,7 +167,7 @@ const Todo = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="/image/jinflix/jinflix.png"
+              src="./image/jinflix/jinflix.png"
               alt="logo"
               className={styles.footer_next_img}
             />
