@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./sticky.module.css";
-import firstVideo from "./sticky1.webm";
-import secondVideo from "./sticky2.webm";
-import thirdVideo from "./sticky3.webm";
-import fourthVideo from "./sticky4.webm";
+import firstVideo from "./sticky1.mp4";
+import secondVideo from "./sticky2.mp4";
+import thirdVideo from "./sticky3.mp4";
+import fourthVideo from "./sticky4.mp4";
 
 const Sticky = ({ Cursor, NavBtn }) => {
   return (
@@ -16,7 +16,7 @@ const Sticky = ({ Cursor, NavBtn }) => {
         <header className={styles.header}>
           <div className={styles.bg}>
             <img
-              src="./image/sticky/bg.jpeg"
+              src="./image/sticky/bg.webp"
               alt=""
               className={styles.bg_img}
             />
@@ -103,6 +103,11 @@ const Sticky = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={firstVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/sticky/sticky1.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -126,6 +131,11 @@ const Sticky = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/sticky/sticky3.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -135,6 +145,11 @@ const Sticky = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={secondVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/sticky/sticky2.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -148,6 +163,11 @@ const Sticky = ({ Cursor, NavBtn }) => {
                 <video className={styles.project_img} autoPlay loop muted>
                   <source src={fourthVideo} type="video/mp4" />
                 </video>
+                <img
+                  className={styles.project_img_m}
+                  src="./image/sticky/sticky4.gif"
+                  alt=""
+                ></img>
               </div>
             </div>
             <div className={styles.project_detail_tablet_des}>
@@ -170,7 +190,7 @@ const Sticky = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="./image/pokemon/bg.jpg"
+              src="./image/pokemon/bg.webp"
               alt="logo"
               className={styles.footer_next_img}
             />

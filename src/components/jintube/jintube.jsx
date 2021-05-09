@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./jintube.module.css";
-import firstVideo from "./jintube1.webm";
-import secondVideo from "./jintube2.webm";
-import thirdVideo from "./jintube3.webm";
-import fourthVideo from "./jintube4.webm";
+import firstVideo from "./jintube1.mp4";
+import secondVideo from "./jintube2.mp4";
+import thirdVideo from "./jintube3.mp4";
+import fourthVideo from "./jintube4.mp4";
 
 const Jintube = ({ Cursor, NavBtn }) => {
   return (
@@ -16,7 +16,7 @@ const Jintube = ({ Cursor, NavBtn }) => {
         <header className={styles.header}>
           <div className={styles.bg}>
             <img
-              src="./image/jintube/bg.jpg"
+              src="./image/jintube/bg.webp"
               alt=""
               className={styles.bg_img}
             />
@@ -102,6 +102,11 @@ const Jintube = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={firstVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/jintube/jintube1.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -125,6 +130,11 @@ const Jintube = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/jintube/jintube3.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -134,6 +144,11 @@ const Jintube = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={secondVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/jintube/jintube2.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -147,6 +162,11 @@ const Jintube = ({ Cursor, NavBtn }) => {
                 <video className={styles.project_img} autoPlay loop muted>
                   <source src={fourthVideo} type="video/mp4" />
                 </video>
+                <img
+                  className={styles.project_img_m}
+                  src="./image/jintube/jintube4.gif"
+                  alt=""
+                ></img>
               </div>
             </div>
             <div className={styles.project_detail_tablet_des}>

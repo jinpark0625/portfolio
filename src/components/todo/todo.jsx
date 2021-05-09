@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./todo.module.css";
-import firstVideo from "./todo1.webm";
-import secondVideo from "./todo2.webm";
-import thirdVideo from "./todo3.webm";
+import firstVideo from "./todo1.mp4";
+import secondVideo from "./todo2.mp4";
+import thirdVideo from "./todo3.mp4";
 
 const Todo = ({ Cursor, NavBtn }) => {
   return (
@@ -14,7 +14,11 @@ const Todo = ({ Cursor, NavBtn }) => {
       <section>
         <header className={styles.header}>
           <div className={styles.bg}>
-            <img src="./image/todo/todo.png" alt="" className={styles.bg_img} />
+            <img
+              src="./image/todo/todo.webp"
+              alt=""
+              className={styles.bg_img}
+            />
           </div>
           <div className={styles.project_info_wrap}>
             <div className={styles.project_info_div}>
@@ -98,6 +102,11 @@ const Todo = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={firstVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/todo/todo1.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -121,6 +130,11 @@ const Todo = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/todo/todo3.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -130,6 +144,11 @@ const Todo = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={secondVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/todo/todo2.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -141,9 +160,9 @@ const Todo = ({ Cursor, NavBtn }) => {
             <div className={styles.project_detail_mobile}>
               <div className={styles.project_detail_mobile_mv}>
                 <img
-                  src="./image/todo/todo_m.png"
+                  src="./image/todo/todo_m.webp"
                   alt=""
-                  className={styles.project_img}
+                  className={styles.project_img_ongoing}
                 />
               </div>
             </div>
@@ -167,7 +186,7 @@ const Todo = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="./image/jinflix/jinflix.png"
+              src="./image/jinflix/jinflix.webp"
               alt="logo"
               className={styles.footer_next_img}
             />

@@ -71,15 +71,17 @@ const About = ({ Cursor, NavBtn }) => {
             저는 이런 것에 경력이 있습니다.
           </p>
           <p className={`${styles.text} ${styles.line_height}`}>
-            Tomato Project
+            Tomato Project -
+            <span className={styles.job}> Graphic Designer</span>
             <br />
-            Hanmi Post
+            Hanmi Post - <span className={styles.job}>Graphic Designer</span>
             <br />
-            Northern Esports Academy
+            Northern Esports Academy -{" "}
+            <span className={styles.job}>Graphic Designer</span>
             <br />
-            Cheum Tour
+            Cheum Tour - <span className={styles.job}>Graphic Designer</span>
             <br />
-            Chicago City Sports
+            Chicago City Sports - <span className={styles.job}>Internship</span>
           </p>
         </div>
       </div>

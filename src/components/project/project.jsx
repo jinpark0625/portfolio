@@ -1,14 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./project.module.css";
 import Particles from "react-particles-js";
 
 const Project = ({ Cursor, NavBtn }) => {
   const progressRef = useRef();
-  const wrapRef = useRef();
-  const pageRef = useRef();
-  const lastRef = useRef();
-  const ulRef = useRef();
 
   const [listShow, setListShow] = useState(0);
 
@@ -51,31 +47,6 @@ const Project = ({ Cursor, NavBtn }) => {
       setListShow(0);
     }
   };
-
-  const addEventListeners = () => {
-    ulRef.current.addEventListener("scroll", onScroll);
-  };
-
-  const onScroll = () => {
-    let lastX = lastRef.current.getBoundingClientRect().x;
-    console.log(lastX);
-    if (lastX <= 0) {
-      pageRef.current.scrollIntoView({
-        inline: "end",
-      });
-    }
-  };
-
-  const removeEventListeners = () => {
-    window.removeEventListener("scroll", onScroll);
-  };
-
-  useEffect(() => {
-    addEventListeners();
-    return () => {
-      removeEventListeners();
-    };
-  }, []);
 
   return (
     <>
@@ -348,10 +319,10 @@ const Project = ({ Cursor, NavBtn }) => {
           </section>
         </div>
       </article>
-      <section ref={wrapRef} className={styles.wrap_m}>
+      <section className={styles.wrap_m}>
         <NavBtn />
-        <ul className={styles.ul} ref={ulRef}>
-          <li className={styles.li} ref={pageRef}>
+        <ul className={styles.ul}>
+          <li className={styles.li}>
             <NavLink to="/pokemon" className={styles.list_m}>
               Pokemon
             </NavLink>
@@ -363,9 +334,7 @@ const Project = ({ Cursor, NavBtn }) => {
           </li>
           <li className={styles.li}>
             <NavLink to="/todo" className={styles.list_m}>
-              Not
-              <br />
-              To-do list
+              Not To-do list
             </NavLink>
           </li>
           <li className={styles.li}>
@@ -381,23 +350,6 @@ const Project = ({ Cursor, NavBtn }) => {
           <li className={styles.li}>
             <NavLink to="sticky" className={styles.list_m}>
               Sticky Monster Lab
-            </NavLink>
-          </li>
-          <li className={styles.li} ref={lastRef}>
-            <NavLink to="/pokemon" className={styles.list_m}>
-              Pokemon
-            </NavLink>
-          </li>
-          <li className={styles.li}>
-            <NavLink to="/jintube" className={styles.list_m}>
-              Jintube
-            </NavLink>
-          </li>
-          <li className={styles.li}>
-            <NavLink to="/todo" className={styles.list_m}>
-              Not
-              <br />
-              To-do list
             </NavLink>
           </li>
         </ul>

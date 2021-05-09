@@ -9455,6 +9455,13 @@ react-dev-utils@^11.0.3:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
+react-device-orientation@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-device-orientation/-/react-device-orientation-0.1.0.tgz#4824eb691ce49727a6c52b86242fd3e77b9f965f"
+  integrity sha512-wbYo5Gf177UHB2hIG+lO54kZFI8TFmHreuH05rIPFxYL11sW3f+9eDkV7cCYHdqAsnKWxdQo0ktc+QAf7283vA==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"

@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import Particles from "react-particles-js";
 
 const NavM = ({ open, menuClose }) => {
-  console.log(open);
   return (
     <div className={`${open ? styles.menu_wrap_m : styles.hide}`}>
       <div className={styles.menu_m}>

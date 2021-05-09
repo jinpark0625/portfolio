@@ -6,8 +6,8 @@ import Mouse from "./components/mouse/mouse";
 import Nav from "./components/nav/nav";
 import ContactRepository from "./service/contact_repository";
 
-const Cursor = memo((props) => <Mouse />);
-const NavBtn = memo((props) => <Nav />);
+const Cursor = memo(() => <Mouse />);
+const NavBtn = memo(() => <Nav />);
 
 const contactRepository = new ContactRepository();
 

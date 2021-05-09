@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./jinflix.module.css";
-import firstVideo from "./jinflix1.webm";
-import secondVideo from "./jinflix2.webm";
-import thirdVideo from "./jinflix3.webm";
-import fourthVideo from "./jinflix4.webm";
+import firstVideo from "./jinflix1.mp4";
+import secondVideo from "./jinflix2.mp4";
+import thirdVideo from "./jinflix3.mp4";
+import fourthVideo from "./jinflix4.mp4";
 
 const Jinflix = ({ Cursor, NavBtn }) => {
   return (
@@ -16,7 +16,7 @@ const Jinflix = ({ Cursor, NavBtn }) => {
         <header className={styles.header}>
           <div className={styles.bg}>
             <img
-              src="./image/jinflix/bg.jpg"
+              src="./image/jinflix/bg.webp"
               alt=""
               className={styles.bg_img}
             />
@@ -103,6 +103,11 @@ const Jinflix = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={firstVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/jinflix/jinflix1.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -125,6 +130,11 @@ const Jinflix = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/jinflix/jinflix3.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -134,6 +144,11 @@ const Jinflix = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={secondVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/jinflix/jinflix2.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -147,6 +162,11 @@ const Jinflix = ({ Cursor, NavBtn }) => {
                 <video className={styles.project_img} autoPlay loop muted>
                   <source src={fourthVideo} type="video/mp4" />
                 </video>
+                <img
+                  className={styles.project_img_m}
+                  src="./image/jinflix/jinflix4.gif"
+                  alt=""
+                ></img>
               </div>
             </div>
             <div className={styles.project_detail_tablet_des}>
@@ -168,7 +188,7 @@ const Jinflix = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="./image/skt/skt.jpeg"
+              src="./image/skt/skt.webp"
               alt="logo"
               className={styles.footer_next_img}
             />

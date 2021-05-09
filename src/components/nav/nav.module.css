@@ -22,7 +22,8 @@
 .text {
   display: block;
   height: 30px;
-  font-family: "Jeju-Myeongjo";
+  font-family: "Noto-Serif-KR";
+  font-weight: 400;
   font-size: 1rem;
   margin-left: 10px;
   transition: color 0.6s ease-in-out;
@@ -33,7 +34,6 @@
   transition-property: color, transform;
 }
 .text:hover {
-  color: #fff;
   transform: scale(1.1);
 }
 .about {
@@ -50,9 +50,6 @@
   color: #fff;
   font-weight: bolder;
 }
-.black {
-  color: #070707;
-}
 @media screen and (max-width: 768px) {
   .wrap {
     display: none;
@@ -65,4 +62,11 @@
     color: #c3c3c3;
     cursor: pointer;
   }
+}
+
+.black {
+  color: #070707;
+}
+.white {
+  color: #c3c3c3;
 }

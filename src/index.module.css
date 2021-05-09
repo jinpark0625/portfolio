@@ -1,25 +1,93 @@
+/* serif */
 @font-face {
-  font-family: "Montserrat-Light";
-  src: url("font/Montserrat-Light.ttf") format("truetype");
+  font-family: "Noto-Serif-KR";
+  src: url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-ExtraLight.otf")
+      format("opentype"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-ExtraLight.woff")
+      format("woff"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-ExtraLight.woff2")
+      format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto-Serif-KR";
+  src: url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Light.otf")
+      format("opentype"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Light.woff")
+      format("woff"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Light.woff2")
+      format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Montserrat-Medium";
-  src: url("font/Montserrat-Medium.ttf") format("truetype");
+  font-family: "Noto-Serif-KR";
+  src: url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Regular.otf")
+      format("opentype"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Regular.woff")
+      format("woff"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Regular.woff2")
+      format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Jeju-Myeongjo";
-  src: url("font/JejuMyeongjoOTF.otf") format("opentype");
-  font-weight: normal;
+  font-family: "Noto-Serif-KR";
+  src: url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Medium.otf")
+      format("opentype"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Medium.woff")
+      format("woff"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Medium.woff2")
+      format("woff2");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "Jeju-Gothic";
-  src: url("font/JejuGothicOTF.otf") format("opentype");
-  font-weight: normal;
+  font-family: "Noto-Serif-KR";
+  src: url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-semiBold.otf")
+      format("opentype"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-SemiBold.woff")
+      format("woff"),
+    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-SemiBold.woff2")
+      format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* sans */
+
+@font-face {
+  font-family: "Noto-Sans-KR";
+  src: url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Thin.otf")
+      format("opentype"),
+    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Thin.woff")
+      format("woff"),
+    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Thin.woff2")
+      format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto-Sans-KR";
+  src: url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Light.otf")
+      format("opentype"),
+    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Light.woff")
+      format("woff"),
+    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Light.woff2")
+      format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto-Sans-KR";
+  src: url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-DemiLight.otf")
+      format("opentype"),
+    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-DemiLight.woff")
+      format("woff"),
+    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-DemiLight.woff2")
+      format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -31,7 +99,8 @@ a:active {
 
 body {
   margin: 0;
-  font-family: "Jeju-Myeongjo", serif;
+  font-family: "Noto-Serif-KR", serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1b1d20;

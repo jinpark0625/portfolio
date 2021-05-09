@@ -48,26 +48,61 @@
   transition-property: opacity, background-color, transform, mix-blend-mode;
 }
 .manifesto {
-  height: 460px;
-  width: 360px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   transition: opacity 0.6s ease-in-out;
+  margin-bottom: 90px;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+.dimension {
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+  perspective: 800px;
 }
 .title {
+  width: 100%;
   z-index: 10;
-  color: #fff;
-  font-family: "Jeju-Myeongjo";
-  height: 360px;
-  margin: 0 160px 0 0;
+  color: #c3c3c3;
+  font-family: "Noto-Serif-KR";
+  font-weight: 400;
   font-size: 1.163rem;
-  line-height: 1.5;
+  line-height: 1.66;
+  text-align: center;
+  transform: translate3d(0, 0, 15px);
 }
+.menu_wrap {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  transform: translate3d(0px, -10px, 61px);
+}
+.menu {
+  display: flex;
+  height: 65px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #c3c3c3;
+  font-size: 1.2rem;
+  margin-right: 90px;
+  filter: blur(2px);
+  transition: filter 0.3s ease-in-out;
+}
+.menu:last-child {
+  margin: 0;
+}
+.menu:hover {
+  filter: none;
+}
+
 .menu_blur {
   filter: blur(1px);
 }
+
 .project_dot:hover .c_project,
 .project:hover ~ svg .c_project {
   transform: scale(1.6);
@@ -106,27 +141,6 @@
 .mouse {
   background-color: unset;
 }
-.about {
-  position: absolute;
-  color: #c3c3c3;
-  left: -4%;
-  bottom: 3%;
-  font-size: 1.5rem;
-}
-.project {
-  position: absolute;
-  color: #c3c3c3;
-  left: 49.5%;
-  bottom: 49%;
-  font-size: 1.5rem;
-}
-.contact {
-  position: absolute;
-  color: #c3c3c3;
-  right: -24%;
-  top: 4%;
-  font-size: 1.5rem;
-}
 
 .show {
   opacity: 1;
@@ -140,40 +154,78 @@
 .down {
   transform: translateY(20%);
 }
-@media screen and (max-width: 768px) {
-  .intro {
-    display: none;
+.space {
+  display: none;
+}
+.space_m {
+  display: block;
+}
+.space_s {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 18px;
   }
-  .menuDot_wrap {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: static;
-    width: 100%;
-    height: unset;
-    transform: translate(0, 0);
+  .menu_wrap {
+    margin-top: 50px;
   }
-  .menuDot_wrap::after {
-    width: 79px;
-    height: 100%;
-    background-color: rgb(207 207 207 / 59%);
-    content: "";
-    position: absolute;
-    z-index: -1;
-    filter: blur(26px);
-  }
-  .menuDotOne_wrap,
-  .menuDotTwo_wrap,
-  .menuDotThree_wrap {
-    position: static;
-  }
-  .menuDotOne_wrap,
-  .menuDotTwo_wrap {
-    margin-bottom: 50px;
+  .menu {
+    filter: nonen;
   }
 }
-@media screen and (max-width: 375px) {
-  .menuDot_wrap {
-    transform: scale(0.9);
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 18px;
+  }
+  .menu_wrap {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .manifesto {
+    margin: 0;
+  }
+  .menu {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 13px;
+  }
+  .menu_wrap {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  .menu {
+    margin: 0 0 30px 0;
+  }
+  .menu:last-child {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .space {
+    display: block;
+  }
+  .space_m {
+    display: none;
+  }
+  .title {
+    line-height: 1.7;
+  }
+}
+@media screen and (max-width: 480px) {
+  .space_s {
+    display: block;
+  }
+}
+@media screen and (max-width: 374px) {
+  .title {
+    font-size: 12px;
+  }
+  .menu {
+    font-size: 13px;
   }
 }

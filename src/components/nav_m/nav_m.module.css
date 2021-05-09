@@ -31,7 +31,8 @@
   .text_m {
     display: block;
     height: 30px;
-    font-family: "Jeju-Myeongjo";
+    font-family: "Noto-Serif-KR";
+    font-weight: 400;
     font-size: 26px;
     margin: 0;
     transition: color 0.6s ease-in-out;

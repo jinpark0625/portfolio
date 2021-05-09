@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./pokemon.module.css";
-import firstVideo from "./pokemon1.webm";
-import secondVideo from "./pokemon2.webm";
-import thirdVideo from "./pokemon3.webm";
+import firstVideo from "./pokemon1.mp4";
+import secondVideo from "./pokemon2.mp4";
+import thirdVideo from "./pokemon3.mp4";
 
 const Pokemon = ({ Cursor, NavBtn }) => {
   return (
@@ -15,7 +15,7 @@ const Pokemon = ({ Cursor, NavBtn }) => {
         <header className={styles.header}>
           <div className={styles.bg}>
             <img
-              src="./image/pokemon/bg4.jpg"
+              src="./image/pokemon/bg4.webp"
               alt=""
               className={styles.bg_img}
             />
@@ -106,6 +106,11 @@ const Pokemon = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={firstVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/pokemon/pokemon1.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -130,6 +135,11 @@ const Pokemon = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/pokemon/pokemon3.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -139,6 +149,11 @@ const Pokemon = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={secondVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/pokemon/pokemon2.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -150,9 +165,9 @@ const Pokemon = ({ Cursor, NavBtn }) => {
             <div className={styles.project_detail_mobile}>
               <div className={styles.project_detail_mobile_mv}>
                 <img
-                  src="./image/pokemon/poke_mobile.png"
+                  src="./image/pokemon/poke_mobile.webp"
                   alt=""
-                  className={styles.project_img}
+                  className={styles.project_img_ongoing}
                 />
               </div>
             </div>
@@ -177,7 +192,7 @@ const Pokemon = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="./image/jintube/logo.png"
+              src="./image/jintube/logo.webp"
               alt="logo"
               className={styles.footer_next_img}
             />

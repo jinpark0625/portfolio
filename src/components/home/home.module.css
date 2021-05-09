@@ -25,7 +25,8 @@
 }
 .text {
   font-size: 1.4rem;
-  font-family: "Jeju-Myeongjo";
+  font-family: "Noto-Serif-KR";
+  font-weight: 400;
   color: makerBlackD;
   position: absolute;
   left: 50%;
@@ -42,7 +43,8 @@
   width: 90px;
   height: 90px;
   font-size: 1rem;
-  font-family: "Jeju-Myeongjo";
+  font-family: "Noto-Serif-KR";
+  font-weight: 400;
   color: makerBlackD;
   position: absolute;
   left: 50%;

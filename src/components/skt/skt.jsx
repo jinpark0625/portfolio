@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./skt.module.css";
-import firstVideo from "./skt1.webm";
-import secondVideo from "./skt2.webm";
-import thirdVideo from "./skt3.webm";
-import fourthVideo from "./skt4.webm";
+import firstVideo from "./skt1.mp4";
+import secondVideo from "./skt2.mp4";
+import thirdVideo from "./skt3.mp4";
+import fourthVideo from "./skt4.mp4";
 
 const Skt = ({ Cursor, NavBtn }) => {
   return (
@@ -15,7 +15,7 @@ const Skt = ({ Cursor, NavBtn }) => {
       <section>
         <header className={styles.header}>
           <div className={styles.bg}>
-            <img src="./image/skt/bg.jpeg" alt="" className={styles.bg_img} />
+            <img src="./image/skt/bg.webp" alt="" className={styles.bg_img} />
           </div>
           <div className={styles.project_info_wrap}>
             <div className={styles.project_info_div}>
@@ -97,6 +97,11 @@ const Skt = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={firstVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/skt/skt1.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -120,6 +125,11 @@ const Skt = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/skt/skt3.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -129,6 +139,11 @@ const Skt = ({ Cursor, NavBtn }) => {
                   <video className={styles.project_img} autoPlay loop muted>
                     <source src={secondVideo} type="video/mp4" />
                   </video>
+                  <img
+                    className={styles.project_img_m}
+                    src="./image/skt/skt2.gif"
+                    alt=""
+                  ></img>
                 </div>
               </div>
             </div>
@@ -142,6 +157,11 @@ const Skt = ({ Cursor, NavBtn }) => {
                 <video className={styles.project_img} autoPlay loop muted>
                   <source src={fourthVideo} type="video/mp4" />
                 </video>
+                <img
+                  className={styles.project_img_m}
+                  src="./image/skt/skt4.gif"
+                  alt=""
+                ></img>
               </div>
             </div>
             <div className={styles.project_detail_tablet_des}>
@@ -164,7 +184,7 @@ const Skt = ({ Cursor, NavBtn }) => {
           <div className={styles.footer_img}>
             <div className={styles.grad_next}></div>
             <img
-              src="./image/sticky/sticky.jpeg"
+              src="./image/sticky/sticky.webp"
               alt="logo"
               className={styles.footer_next_img}
             />
