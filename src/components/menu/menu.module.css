@@ -171,7 +171,7 @@
     margin-top: 50px;
   }
   .menu {
-    filter: nonen;
+    filter: blur(0px);
   }
 }
 

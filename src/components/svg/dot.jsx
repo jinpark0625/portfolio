@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Dot = (props) => {
+const Dot = memo((props) => {
   return (
     <svg
       version="1.1"
@@ -41,6 +41,6 @@ const Dot = (props) => {
       <g></g>
     </svg>
   );
-};
+});
 
 export default Dot;

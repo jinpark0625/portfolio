@@ -1,0 +1,16 @@
+/* font */
+
+/* 28 23 19 */
+@value title: 1.750rem;
+@value subTitle: 1.438rem;
+@value title: 1.188rem;
+
+/* 23 18 16 */
+@value titleT: 1.438rem;
+@value subTitleT: 1.125rem;
+@value textT: 1rem;
+
+/* 16 14 13*/
+@value titleM:  1rem;
+@value subTitleM: 0.875rem;
+@value textM: 0.813rem;

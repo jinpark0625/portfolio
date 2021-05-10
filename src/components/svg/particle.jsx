@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Particle = (props) => {
+const Particle = memo((props) => {
   return (
     <svg
       version="1.1"
@@ -113,6 +113,6 @@ const Particle = (props) => {
       <g></g>
     </svg>
   );
-};
+});
 
 export default Particle;

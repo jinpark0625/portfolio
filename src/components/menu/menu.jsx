@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, memo } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./menu.module.css";
 import Particles from "react-particles-js";
 import Particle from "../svg/particle";
@@ -15,106 +15,31 @@ const Menu = memo(({ Cursor }) => {
     x: 0,
     y: 0,
   });
-  const [mobile, setMobile] = useState({
-    x: 0,
-    y: 0,
-  });
-  const [isMobile, setIsMobile] = useState(false);
-  const [isIos, setIsIos] = useState(false);
-
   const wrapRef = useRef();
 
   useEffect(() => {
-    const addEventListeners = () => {
-      document.body.addEventListener("mousemove", onMouseMove);
+    const onMouseMove = (e) => {
+      setCoordinate({
+        ...coordinate,
+        x: e.clientX - window.innerWidth / 2,
+        y: e.clientY - window.innerHeight / 2,
+      });
+      moveText();
     };
-    const removeEventListeners = () => {
+    const moveText = () => {
+      setMCoordinate({
+        x: (mCoordinate.x += (coordinate.x - mCoordinate.x) * 0.1),
+        y: (mCoordinate.y += (coordinate.y - mCoordinate.y) * 0.1),
+      });
+      wrapRef.current.style.transform = `rotateX(${
+        mCoordinate.y / 15
+      }deg) rotateY(${-mCoordinate.x / 35}deg)`;
+    };
+    document.body.addEventListener("mousemove", onMouseMove);
+    return () => {
       document.body.removeEventListener("mousemove", onMouseMove);
     };
-    setIsMobile(mobileChk());
-    setIsIos(iosChk());
-
-    if (isMobile || isIos) {
-      mobileOrientationChk();
-
-      function mobileOrientationChk() {
-        window.addEventListener("deviceorientation", function (event) {
-          //디바이스가 움직임 감지될때 실행
-          setMobile.x = event.gamma;
-          setMobile.y = event.beta;
-        });
-        moveTextMobile();
-      }
-    } else {
-      //pc면 실행
-      addEventListeners();
-    }
-    return () => {
-      removeEventListeners();
-      window.removeEventListener("deviceorientation", function (event) {
-        setMobile.x = event.gamma;
-        setMobile.y = event.beta;
-      });
-    };
-  }, [coordinate, mCoordinate, mobile]);
-
-  const onMouseMove = (e) => {
-    setCoordinate({
-      x: e.clientX - window.innerWidth / 2,
-      y: e.clientY - window.innerHeight / 2,
-    });
-    moveText();
-  };
-
-  const moveText = () => {
-    setMCoordinate({
-      x: (mCoordinate.x += (coordinate.x - mCoordinate.x) * 0.1),
-      y: (mCoordinate.y += (coordinate.y - mCoordinate.y) * 0.1),
-    });
-    wrapRef.current.style.transform = `rotateX(${
-      mCoordinate.y / 15
-    }deg) rotateY(${-mCoordinate.x / 35}deg)`;
-  };
-
-  const moveTextMobile = () => {
-    setMCoordinate({
-      x: (mCoordinate.x += (mobile.x - mCoordinate.x) * 0.1),
-      y: (mCoordinate.y += (mobile.y - mCoordinate.y) * 0.1),
-    });
-    wrapRef.current.style.transform = `rotateX(${
-      mCoordinate.y / 15
-    }deg) rotateY(${-mCoordinate.x / 35}deg)`;
-  };
-
-  const mobileChk = () => {
-    var mobileKeyWords = new Array(
-      "Android",
-      "iPhone",
-      "iPad",
-      "BlackBerry",
-      "Windows CE",
-      "SAMSUNG",
-      "LG",
-      "MOT",
-      "SonyEricsson"
-    );
-    for (var info in mobileKeyWords) {
-      if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
-        return true;
-      }
-    }
-    return false;
-  };
-
-  const iosChk = () => {
-    var mobileKeyWords = new Array("iPhone", "iPad");
-    for (var info in mobileKeyWords) {
-      if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
-        return true;
-      }
-    }
-    return false;
-  };
+  });
 
   return (
     <article className={styles.wrap}>
@@ -184,18 +109,18 @@ const Menu = memo(({ Cursor }) => {
             최선을 다해 빛나는 점을 찍습니다.
           </div>
           <div className={styles.menu_wrap}>
-            <NavLink className={styles.menu} to="/about">
+            <Link className={styles.menu} to="/about">
               <Dot />
               About
-            </NavLink>
-            <NavLink className={styles.menu} to="/project">
+            </Link>
+            <Link className={styles.menu} to="/project">
               <Particle />
               Project
-            </NavLink>
-            <NavLink className={styles.menu} to="/contact">
+            </Link>
+            <Link className={styles.menu} to="/contact">
               <Line />
               Contact
-            </NavLink>
+            </Link>
           </div>
         </div>
       </section>
