@@ -1,4 +1,4 @@
-@value makerLight,makerBgBlack from '../../common/color.css';
+@value makerBgBlack,makerGrey,makerLightGrey,makerWhite from '../../common/color.css';
 
 .wrap {
   background: linear-gradient(180deg, rgb(24 24 24) 0%, rgb(12 12 12) 100%);
@@ -9,30 +9,10 @@
   justify-content: center;
 }
 .particle {
-  background-color: #1b1d20;
+  background-color: makerBgBlack;
   position: absolute;
   width: 100%;
   height: 100%;
-}
-.noise {
-  display: flex;
-  z-index: 2;
-}
-.noise:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABIFJREFUeNrEWk1rGzEQXWuX0prQECcQYjAUFvbqs3NMfnz+QyDXQiBpaA+hPRhXMpIrT97MPKXQGhRJu/pYab7ezCR0XTfFMu52u67Uso2eyffyXS7zUpy1Fi37yu9NdYh/tqk1m83GUst26aP3pY4LPtTjUj/Xr6nIder58f232F7I57Itf2WP0ums27AooFBBXUPeYtVe5DIiqmscc7QGsQk8gEdu60OsD9P6HqsNFukACzxIFkLklqxRsdmDfK6tZY0F8/qOEeh86ncpBUtANXZkuaD+tllulN9LOnA+9YsmbPJ20Lj6eRmPFAKaV1MRUVb292uIU5/l9hkrtJ5MaVRA81hKozlB3MaLvBlNBSP50W5ZzOkR5czbBnIi5WWQgxHroPdoPCnMW+WA1iVM8d09EvoyZtD42vpAjRKIly3+1+aAfbcOlf/Ykc1ms8x8t9JkwtIyjC1h+b5x3aRNp4OM3N3dfapPe3t7e2ppLUQVC+oUG6TxvaatCHu13Rfl5CtPk7BwhrEpFvRpmMcZtKp9zn50CxtphxDrn5UC5vE3lNvn5UCsTHgHYICrZ+c6dtP4+5zrj7Gc5vbSA4kWSs7lKj+/sgQbUOboICHpaM0wKbr+Zyzfc/sro16lahXteV5/7sGd5+fnkN8tkCmgoHuhSqFMTRHvFhlgKN5N3lpyz8GD4B5I1CwtMnCmQTMQBeIUqfIHyxojy2v5Ih4CljbFWLeGMX0NTxT27wNaqPU25AfWxk+TO+25IqOTBuVLO8gbQrcshUpujCy2FzBg9spj95a7nodYubNwFfLEEiZjBbcea6lgw8eZNNUux82KeWc8MVYONLnQ5mqs7cjRkQgEJn6E5ODm5uY1CZkXB5P2RMqPxqZWfAvKLAshvBAQG/ph3NtGZHAc1/JCoP8RKI7MmJDJNrf8AOm/a2TXQqKIHbwoDFLp6dn19fVS04QjCjJ70T4POnhxMgcKja1RSai1LPCoxagYO+FpJU97WXZpYDZiLHyttTQoAVhvqrMB1fheBhyYgB9kh6enpwC1A6kEPEPGuMG1QfTYc5YbEN16lPHCqchHsVC0pyjMb9mfxrCYbDxX28zSVkZ0XVr9y9h/THXsniAEERi44IHKFtVqwXkUuMv9x7rWZG782+wU4m3P8jNF7HlpqfmAgtUSMkuojqC7YIt7Vp03tE+kRnwTMm1JtVlazDNujS7D2OIyBAbtahESLdvLQBwme5vCuEg20b4H9fuv/AZrfS0LYM19k0Ns/WcBFp6zGeDGtPgkFUpgsrmpXq/XvzS1ivIbKPiA1KyFnFFkv4qybOu1BtZlVUlahW8AS6zys1XsfrCsuZX08VLXB1dXE1SN56ubvc+qtrdQQXSLf2hC68mBlsc0XV0mD86ESKdpWuX+qhTWO2RVOtjf99M9J6fV1fWUxXuSSoFJcWkyY+EsLTuLWNBLuKJnUs6CyBteXVxcfDHy2n0JASH5QTZF8PwWpRs8h83735RDEFsTbMZAeinp6gK6ojKJ8Z2kuob5yrzfAgwASaYfY2UgQSYAAAAASUVORK5CYII=);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-  filter: alpha(opacity=60);
-  opacity: 0.6;
-  height: 100vh;
-  user-select: none;
-  pointer-events: none;
 }
 .cursor {
   width: 40px;
@@ -66,7 +46,7 @@
 .title {
   width: 100%;
   z-index: 10;
-  color: #c3c3c3;
+  color: makerGrey;
   font-family: "Noto-Serif-KR";
   font-weight: 400;
   font-size: 1.163rem;
@@ -86,7 +66,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  color: #c3c3c3;
+  color: makerGrey;
   font-size: 1.2rem;
   margin-right: 90px;
   filter: blur(2px);
@@ -98,34 +78,8 @@
 .menu:hover {
   filter: none;
 }
-
 .menu_blur {
   filter: blur(1px);
-}
-
-.project_dot:hover .c_project,
-.project:hover ~ svg .c_project {
-  transform: scale(1.6);
-}
-.c_project {
-  transition: transform 0.6s ease-in-out;
-  transform-origin: 39.5% 37.5%;
-}
-.contact_dot:hover .c_contact,
-.contact:hover ~ svg .c_contact {
-  transform: scale(1.8);
-}
-.c_contact {
-  transition: transform 0.6s ease-in-out;
-  transform-origin: 93.5% 4%;
-}
-.about_dot:hover .c_about,
-.about:hover ~ svg .c_about {
-  transform: scale(1.7);
-}
-.c_about {
-  transition: transform 0.6s ease-in-out;
-  transform-origin: 19% 93.8%;
 }
 .onClick {
   transform: translate(-50%, -50%) scale(0.9);
@@ -141,18 +95,11 @@
 .mouse {
   background-color: unset;
 }
-
 .show {
   opacity: 1;
 }
 .hide {
   opacity: 0;
-}
-.pop {
-  transform: translateY(0%);
-}
-.down {
-  transform: translateY(20%);
 }
 .space {
   display: none;
@@ -165,7 +112,7 @@
 }
 @media screen and (max-width: 1024px) {
   .title {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .menu_wrap {
     margin-top: 50px;
@@ -177,7 +124,7 @@
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 18px;
+    font-size: 1.125em;
   }
   .menu_wrap {
     margin-top: 50px;
@@ -188,10 +135,10 @@
     margin: 0;
   }
   .menu {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .title {
-    font-size: 13px;
+    font-size: 0.813rem;
   }
   .menu_wrap {
     flex-direction: column;
@@ -223,9 +170,9 @@
 }
 @media screen and (max-width: 374px) {
   .title {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .menu {
-    font-size: 13px;
+    font-size: 0.813rem;
   }
 }

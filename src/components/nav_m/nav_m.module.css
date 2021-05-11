@@ -33,7 +33,7 @@
     height: 30px;
     font-family: "Noto-Serif-KR";
     font-weight: 400;
-    font-size: 26px;
+    font-size: 1.625rem;
     margin: 0;
     transition: color 0.6s ease-in-out;
     line-height: 30px;
@@ -71,19 +71,19 @@
 }
 @media screen and (max-width: 550px) {
   .text_m {
-    font-size: 23px;
+    font-size: 1.438rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .text_m {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
 @media screen and (max-width: 380px) {
   .text_m {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 

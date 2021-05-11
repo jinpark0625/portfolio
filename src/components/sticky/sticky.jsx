@@ -100,7 +100,13 @@ const Sticky = ({ Cursor, NavBtn }) => {
             <div className={styles.project_detail_desktop_wrap}>
               <div className={styles.project_detail_desktop_browser_wrap}>
                 <div className={styles.browser_content}>
-                  <video className={styles.project_img} autoPlay loop muted>
+                  <video
+                    className={styles.project_img}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
                     <source src={firstVideo} type="video/mp4" />
                   </video>
                   <img
@@ -128,7 +134,13 @@ const Sticky = ({ Cursor, NavBtn }) => {
               </div>
               <div className={styles.project_detail_tablet}>
                 <div className={styles.project_detail_tablet_mv}>
-                  <video className={styles.project_img} autoPlay loop muted>
+                  <video
+                    className={styles.project_img}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
                     <source src={thirdVideo} type="video/mp4" />
                   </video>
                   <img
@@ -142,7 +154,13 @@ const Sticky = ({ Cursor, NavBtn }) => {
             <div className={styles.project_detail_desktop_wrap}>
               <div className={styles.project_detail_desktop_browser_wrap}>
                 <div className={styles.browser_content}>
-                  <video className={styles.project_img} autoPlay loop muted>
+                  <video
+                    className={styles.project_img}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
                     <source src={secondVideo} type="video/mp4" />
                   </video>
                   <img
@@ -160,7 +178,13 @@ const Sticky = ({ Cursor, NavBtn }) => {
           >
             <div className={styles.project_detail_mobile}>
               <div className={styles.project_detail_mobile_mv}>
-                <video className={styles.project_img} autoPlay loop muted>
+                <video
+                  className={styles.project_img}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
                   <source src={fourthVideo} type="video/mp4" />
                 </video>
                 <img

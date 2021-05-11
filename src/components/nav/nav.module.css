@@ -1,3 +1,5 @@
+@value makerBgBlack,makerGrey,makerLightGrey,makerWhite from '../../common/color.css';
+
 .wrap {
   position: absolute;
   top: 2.5%;
@@ -29,26 +31,12 @@
   transition: color 0.6s ease-in-out;
   margin: 0;
   line-height: 30px;
-  color: #c3c3c3;
+  color: makerGrey;
   transition: 0.6s ease-in-out;
   transition-property: color, transform;
 }
 .text:hover {
   transform: scale(1.1);
-}
-.about {
-  color: #5c5c5c;
-}
-.about:hover {
-  color: #070707;
-  font-weight: bolder;
-}
-.project {
-  color: #c2c2c2;
-}
-.project:hover {
-  color: #fff;
-  font-weight: bolder;
 }
 @media screen and (max-width: 768px) {
   .wrap {
@@ -59,7 +47,7 @@
   }
   .menu_icon {
     margin: 0;
-    color: #c3c3c3;
+    color: makerGrey;
     cursor: pointer;
   }
 }
@@ -68,5 +56,5 @@
   color: #070707;
 }
 .white {
-  color: #c3c3c3;
+  color: makerGrey;
 }

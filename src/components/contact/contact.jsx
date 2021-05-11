@@ -29,6 +29,7 @@ const Contact = ({ Cursor, NavBtn, contactRepository }) => {
       <Particles
         className={styles.particle}
         params={{
+          fpsLimit: 30,
           particles: {
             number: {
               value: 60,
