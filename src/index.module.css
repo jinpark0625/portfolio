@@ -9,17 +9,8 @@
       format("woff2");
   font-weight: 200;
   font-style: normal;
-}
-@font-face {
-  font-family: "Noto-Serif-KR";
-  src: url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Light.otf")
-      format("opentype"),
-    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Light.woff")
-      format("woff"),
-    url("font/NotoSerifKR-WEB/NotoSerifKR-WEB/NotoSerifKR-Light.woff2")
-      format("woff2");
-  font-weight: 300;
-  font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF, U+AC00-D7AF;
 }
 @font-face {
   font-family: "Noto-Serif-KR";
@@ -31,6 +22,8 @@
       format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF, U+AC00-D7AF;
 }
 @font-face {
   font-family: "Noto-Serif-KR";
@@ -42,6 +35,8 @@
       format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF, U+AC00-D7AF;
 }
 @font-face {
   font-family: "Noto-Serif-KR";
@@ -53,32 +48,12 @@
       format("woff2");
   font-weight: 600;
   font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF, U+AC00-D7AF;
 }
 
 /* sans */
 
-@font-face {
-  font-family: "Noto-Sans-KR";
-  src: url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Thin.otf")
-      format("opentype"),
-    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Thin.woff")
-      format("woff"),
-    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Thin.woff2")
-      format("woff2");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Noto-Sans-KR";
-  src: url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Light.otf")
-      format("opentype"),
-    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Light.woff")
-      format("woff"),
-    url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-Light.woff2")
-      format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
 @font-face {
   font-family: "Noto-Sans-KR";
   src: url("font/NotoSansKR-WEB/NotoSansKR-WEB/NotoSansKR-DemiLight.otf")
@@ -89,6 +64,8 @@
       format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: fallback;
+  unicode-range: U+000-5FF, U+AC00-D7AF;
 }
 
 a:hover,
@@ -104,13 +81,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1b1d20;
-  /* overflow: hidden; */
 }
-/* html {
-  scroll-snap-type: y mandatory;
-} */
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
